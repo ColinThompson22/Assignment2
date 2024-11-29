@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Stocks</title>
+        <link rel="stylesheet" href="inst377-assignment2-stylesheet.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js" defer></script>
+        <script src="inst377-assignment2.js" defer></script>
+    </head>
+    <body>
+        <h1>INST377-Stocks</h1>
+        <nav id="mainnav">
+            <ul>
+                <li><a href="inst377-assignment2-home.html">Home</a></li>
+                <li><a href="inst377-assignment2-stocks.html">Stocks</a></li>
+                <li><a href="inst377-assignment2-dogs.html">Dogs</a></li>
+            </ul>
+        </nav>
+        <h2>Let's Chart Some Stocks</h2>
+        <form id="chartform" onsubmit="return loadchart(event)">
+            <input type="text" id="stocklabel" required maxlength="5">
+            <br>
+            <select id="timeline">
+                <option value="thirty">30 Days</option>
+                <option value="sixty">60 Days</option>
+                <option value="ninety">90 Days</option>
+            </select>
+            <br>
+            <input type="submit" id="lookup" value="Lookup">
+        </form>
+        <canvas id="mychart"></canvas>
+        <table id="topfivestocktable">
+            <tr>
+                <th>Ticker</th>
+                <th>Comment Count</th>
+                <th>Sentiment</th>
+            </tr>
+        </table>
+        <div id="audiobox">
+            <h2>On this web page there options to navugate using audio</h2>
+            <p> Make sure your mic is avalible so you can use this feature</p>
+            <ul>
+                <li>Stock look up</li>
+                <ul>
+                    <li>Say: look up (stock ticker)</li>
+                </ul>
+                <li>Navigate to a different page</li>
+                <ul>
+                    <li>Say: naviagte to (page)</li>
+                </ul>
+                <li>Change the page color</li>
+                <ul>
+                    <li>Say: change the color to (color)</li>
+                </ul>
+                <LI>Say hello back to you</LI>
+                <ul>
+                    <li>Say: hello</li>
+                </ul>
+            </ul>
+            <button onclick=" return turnonmic()">Turn On</button>
+            <button onclick="return turnoffmic()">Turn Off</button>
+
+        </div>
+    </body>
+</html>
